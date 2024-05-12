@@ -8,10 +8,10 @@ jobs:
     steps:
       - name: "Check if the string contains substring"
         run: echo "The string contains the substring"
-        if: contains('Hello world', "world")
+        if: contains('Hello world', 'world')
       - name: "Check if the string starts with"
         run: echo "The string starts with"
-        if: startsWith('Hello world', "Hello")
+        if: startsWith('Hello world', 'Hello')
       - name: "Check if the string ends with"
         run: echo "The string ends with"
         if: endsWith('Hello world', "world")
