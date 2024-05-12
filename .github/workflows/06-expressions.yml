@@ -14,9 +14,9 @@ jobs:
         if: startsWith('Hello world', 'Hello')
       - name: "Check if the string ends with"
         run: echo "The string ends with"
-        if: endsWith('Hello world', "world")
+        if: endsWith('Hello world', 'world')
       - name: "Check if the string matches regex"
         run: echo "The string matches regex"
-        if: contains('Hello world', "world")
+        if: contains('Hello world', 'world')
       - name: "Format and echo string"
         run: echo ${{ format('Hello {0} {1} {2}', 'Mona', 'the', 'octocat') }}
