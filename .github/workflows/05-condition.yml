@@ -7,7 +7,7 @@ on:
 
 jobs:
   hello-world:
-    if: github.repository == 'v2-accelerators/github-actions-certification-practice'
+    if: github.repository == 'v2-accelerators/github-actions-certification-practicedssd'
     runs-on: ubuntu-latest
     steps:
       - name: "Hello World"
