@@ -1,0 +1,22 @@
+name: Expressions Demo
+
+on: [push]
+
+jobs:
+  functions-demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Check if the string contains substring"
+        run: echo "The string contains the substring"
+        if: contains('Hello world', "world")
+      - name: "Check if the string starts with"
+        run: echo "The string starts with"
+        if: startsWith('Hello world', "Hello")
+      - name: "Check if the string ends with"
+        run: echo "The string ends with"
+        if: endsWith('Hello world', "world")
+      - name: "Check if the string matches regex"
+        run: echo "The string matches regex"
+        if: contains('Hello world', "world")
+      - name: "Format and echo string"
+        run: echo ${{ format('Hello {0} {1} {2}', 'Mona', 'the', 'octocat') }}
