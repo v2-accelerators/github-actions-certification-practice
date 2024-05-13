@@ -1,0 +1,14 @@
+name: Workflow Commands Demo
+
+on: ['push'] # This workflow will run on push events
+
+jobs:
+  workflow-commands:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Group Logging"
+        run: |
+          echo "::group::My Group Message"
+          echo "message 1"
+          echo "message 2"
+          echo "::endgroup::"
