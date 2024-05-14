@@ -28,8 +28,6 @@ jobs:
         run: echo "The run number is ${{ github.run_number }}"
       - name: "Print the run id"
         run: echo "The run id is ${{ github.run_id }}"
-      - name: "Print the action"
-        run: echo "The action is ${{ github.action }}"
       - name: "Print the event"
         run: echo "The event is ${{ toJson(github.event) }}"
       - name: "Print the workspace"
