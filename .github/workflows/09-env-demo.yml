@@ -1,6 +1,8 @@
 name: my_color_workflow
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
 env:
   favorite_color: orange
 jobs:
