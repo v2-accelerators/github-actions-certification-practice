@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: "Multi Event Demo"
         run: |
-          echo "REF: $GITHUB_REFD"
+          echi "REF: $GITHUB_REFD"
           echo "Job id: $GITHUB_JOB"
           echo "Action: $GITHUB_ACTION"
           echo "Actor: $GITHUB_ACTOR"
