@@ -16,24 +16,24 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    name: "Setup AWS CLI"
-    shell: bash
-    run: |
-      echo "Setting up AWS CLI"
-      python -m venv .venv
-      source .venv/bin/activate
-      pip install awscli
-      aws configure set default region ${{ inputs.region }}
-      aws configure set aws_access_key_id ${{ inputs.aws-access-key-id }}
-      aws configure set aws_secret_access_key ${{ inputs.aws-secret-access-key }}
-      aws configure set output json
-      aws configure list
-      echo "AWS CLI setup completed"
+    - name: "Setup AWS CLI"
+      shell: bash
+      run: |
+        echo "Setting up AWS CLI"
+        python -m venv .venv
+        source .venv/bin/activate
+        pip install awscli
+        aws configure set default region ${{ inputs.region }}
+        aws configure set aws_access_key_id ${{ inputs.aws-access-key-id }}
+        aws configure set aws_secret_access_key ${{ inputs.aws-secret-access-key }}
+        aws configure set output json
+        aws configure list
+        echo "AWS CLI setup completed"
     
-    name: "Verify AWS CLI"
-    shell: bash
-    run: |
-      echo "Verifying AWS CLI"
-      aws sts get-caller-identity
-      echo "AWS CLI verification completed"
+    - name: "Verify AWS CLI"
+      shell: bash
+      run: |
+        echo "Verifying AWS CLI"
+        aws sts get-caller-identity
+        echo "AWS CLI verification completed"
 
