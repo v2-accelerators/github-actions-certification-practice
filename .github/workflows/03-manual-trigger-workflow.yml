@@ -12,6 +12,14 @@ on:
         required: true
         type: string
         
+jobs:  
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Display input content
+        run: |
+          echo "${{ inputs.action }}"
+          echo "${{ inputs.aws_account }}"
 # on:
 #   workflow_dispatch:
 #     inputs:
@@ -28,17 +36,17 @@ on:
 #         required: false
 #         type: string
 
-jobs:  
-  greet:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Decode file content
-        run: |
-          echo "${{ inputs.data }}" | base64 --decode > ./decoded_file.txt
-      - name: Display Greeting
-        run: |
-          echo "${{ inputs.greeting }}, ${{ inputs.name }}!"
-      - name: Display File Content
-        run: |
-          echo "Contents for file"
-          cat .decoded_file.txt
+# jobs:  
+#   greet:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Decode file content
+#         run: |
+#           echo "${{ inputs.data }}" | base64 --decode > ./decoded_file.txt
+#       - name: Display Greeting
+#         run: |
+#           echo "${{ inputs.greeting }}, ${{ inputs.name }}!"
+#       - name: Display File Content
+#         run: |
+#           echo "Contents for file"
+#           cat .decoded_file.txt
