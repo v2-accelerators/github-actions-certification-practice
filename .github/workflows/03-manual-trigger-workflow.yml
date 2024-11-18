@@ -1,5 +1,4 @@
 name: Manual trigger workflow with parameters
-
 on:
   workflow_dispatch:
     inputs:
@@ -11,6 +10,18 @@ on:
         description: "AWS Account Number"
         required: true
         type: string
+      resource_prefix:
+        description: "Resource Prefix"
+        required: true
+        type: string
+      environment:
+        description: "Environment"
+        required: true
+        type: string
+      resource_suffix:
+        description: "Resource Suffix"
+        required: false
+        type: string
         
 jobs:  
   greet:
@@ -18,8 +29,11 @@ jobs:
     steps:
       - name: Display input content
         run: |
-          echo "${{ inputs.action }}"
-          echo "${{ inputs.aws_account }}"
+          echo "Action: ${{ inputs.action }}"
+          echo "AWS Account: ${{ inputs.aws_account }}"
+          echo "Resource Prefix: ${{ inputs.resource_prefix }}"
+          echo "Environment: ${{ inputs.environment }}"
+          echo "Resource Suffix: ${{ inputs.resource_suffix }}"
 # on:
 #   workflow_dispatch:
 #     inputs:
